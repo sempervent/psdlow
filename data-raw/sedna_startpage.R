@@ -18,19 +18,6 @@ sedna_startpage <- list(
   # it could also end in '_boxes' if they are searchable web boxes
   sections = list(
     # sections are made up of different types that are always separated by _
-    # productivity links ------------------------------------------------------
-    # productivity links are useful links that help me throughout the day
-    productivity_links = c(
-      sheets = 'https://sheets.google.com',
-      docs   = 'https://docs.google.com',
-      office = 'http://office365.com',
-      dropbox = 'https://dropbox.com',
-      github = 'https://github.com',
-      trello = 'http://trello.com',
-      drive = 'http://drive.google.com',
-      pocket = 'http://getpocket.com'
-    ),
-
     # main_links --------------------------------------------------------------
     # main links will always be displayed on the page, other link and link sections
     # will take slightly longer to access, whereas these are constantly displayed
@@ -47,6 +34,19 @@ sedna_startpage <- list(
       pocket = 'http://getpocket.com',
       reddit = 'http://reddit.com'
     ),
+    # productivity links ------------------------------------------------------
+    # productivity links are useful links that help me throughout the day
+    productivity_links = c(
+      sheets = 'https://sheets.google.com',
+      docs   = 'https://docs.google.com',
+      office = 'http://office365.com',
+      dropbox = 'https://dropbox.com',
+      github = 'https://github.com',
+      trello = 'http://trello.com',
+      drive = 'http://drive.google.com',
+      pocket = 'http://getpocket.com'
+    ),
+
     # watch links -------------------------------------------------------------
     # these are primarily videos you watch on the internet tubes i'm told
     watch_links = c(
@@ -121,7 +121,7 @@ sedna_startpage <- list(
       banggood = 'https://www.banggood.com/'
     ),
 # learn links -------------------------------------------------------------
-    learn = c(# i so want this as a search box
+    learn_links = c(# i so want this as a search box
       googlescholar = 'https://scholar.google.com',
       kahnacademy = 'https://www.khanacademy.org/',
       udacity = 'https://www.udacity.com/'),
@@ -177,4 +177,4 @@ sedna_startpage <- list(
   )
 )
 
-saveRDS(sedna_startpage, 'sedna_startpage.rds')
+saveRDS(sedna_startpage, 'data/sedna_startpage.rds')
