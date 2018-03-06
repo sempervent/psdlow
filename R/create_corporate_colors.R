@@ -16,5 +16,5 @@ create_corporate_colors <- function(
 ) {
   facColors = factor_colors
 
-  if (is.null(cols)) {}
+  return(facColors)
 }

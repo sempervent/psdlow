@@ -26,8 +26,10 @@ define_sedna_object <- function(
    sedna_author = Sys.info()[['user']],
    sedna_company = Sys.inf()[['machine']],
    render_type = c('html','latex','shiny','rmarkdown','script'),
-   style_template = c('cv','resume','startpage','raw','memo','article'),
-   output_order = list(
+   style_template = c('cv','resume','startpage','raw','memo','article')
+  ) {
+   # need to create a different object type for each render style being created
+    output_order = list(
      html = c('<html>','<head>','</head>','<body>','</body>','</html>'),
      latex = c('\\begin{document}','\\end{document)'),
      shiny - c('fluipdage','dashboard','twopanel'),
@@ -35,8 +37,6 @@ define_sedna_object <- function(
      memo = c('\\begin{document}','\\end{document}'),
      article = c('\\begin{document}','\\end{document}')
    )
-                                ) {
-  # need to create a different object type for each render style being created
    # create the sedna object
    sedna_object = list(
                        name = sedna_object_name,
@@ -57,6 +57,10 @@ define_sedna_object <- function(
        publications = c(),
        employment = c(),
        education = c()
+   ),
+   html = list(
+     lines = c('<html>','<head>','</head>','<body>','</body>','</html>'),
+     css = "style.css"
    ),
    resume = list(
        contact = c('name','title','address','phone','email','website','git','linkedin'),
@@ -85,21 +89,18 @@ define_sedna_object <- function(
      title = c(),
      subject = c(),
      sections = c('introduction','materials and methods','results','discussion','conclusion')
+   ),
+   rmarkdown = list(),
+   script = list()
    )
 
-   )
 
-   print(sedna_object)
-   if ('html' %in% tolower(render_type)) {
-      style = 'style.css' # later style name of template
-      lines = c('<html>','<head>','</head>','<body>','</body>','</html>')
-   }
 }
 
-message('default')
-define_sedna_object()
-message("startpage")
-define_sedna_object("goldcase","moonvest","sedna",'html','startpage')
+# message('default')
+# define_sedna_object()
+# message("startpage")
+# define_sedna_object("goldcase","moonvest","sedna",'html','startpage')
 
 
 
